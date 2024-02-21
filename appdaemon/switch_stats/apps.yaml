@@ -1,0 +1,9 @@
+switch_stats:
+  module: mea
+  class: SwitchStats
+  include:
+    - entity_id: module[12]_relay[1234]
+    - entity_id: module[34]_relay[12]
+    - entity_id: outdoors_valve
+    - entity_id: 0xa4c138dd73a94d2f_state
+  interval: 60
