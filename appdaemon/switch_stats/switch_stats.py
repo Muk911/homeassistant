@@ -31,7 +31,10 @@ class SwitchStats(hass.Hass):
         v3d = 0
         v7d = 0         
         for rec in hist[0]:
-            last_changed = datetime.datetime.strptime(rec["last_changed"], "%Y-%m-%dT%H:%M:%S.%f%z")
+            if (rec["last_changed"].find('.') > 0):
+                last_changed = datetime.datetime.strptime(rec["last_changed"], "%Y-%m-%dT%H:%M:%S.%f%z")
+            else:
+                last_changed = datetime.datetime.strptime(rec["last_changed"], "%Y-%m-%dT%H:%M:%S%z")
             if (state == 0): #unknown state
                 if (rec["state"] == 'off'):
                   state = 1 
@@ -71,3 +74,4 @@ class SwitchStats(hass.Hass):
         friendly_name = self.get_state("switch." + entity, attribute="friendly_name")
         self.set_state("sersor.stat_" + entity, state = round(v1d / 60, 0), attributes = {"friendly_name":friendly_name,"v1d": round(v1d / 60, 0),"v3d": round(v3d / 60, 0),"v7d": round(v7d / 60, 0) })
         self.log("sersor.stat_" + entity)
+
