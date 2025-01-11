@@ -1,9 +1,9 @@
 type: custom:auto-entities
 filter:
   include:
-    - entity_id: /sersor.stat_module[12]_relay[1234]/
-    - entity_id: /sersor.stat_module[34]_relay[12]/
-    - entity_id: sersor.stat_0xa4c138dd73a94d2f_state
+    - entity_id: /sensor.stat_module[12]_relay[1234]/
+    - entity_id: /sensor.stat_module[34]_relay[12]/
+    - entity_id: sensor.stat_0xa4c138dd73a94d2f_state
 card:
   type: custom:flex-table-card
   title: Отчет по поливу
