@@ -1,5 +1,5 @@
 switch_stats:
-  module: stats
+  module: switch_stats
   class: SwitchStats
   include:
     - entity_id: module[12]_relay[1234]
