@@ -72,6 +72,6 @@ class SwitchStats(hass.Hass):
           v7d = v7d + delta.total_seconds()
           
         friendly_name = self.get_state("switch." + entity, attribute="friendly_name")
-        self.set_state("sersor.stat_" + entity, state = round(v1d / 60, 0), attributes = {"friendly_name":friendly_name,"v1d": round(v1d / 60, 0),"v3d": round(v3d / 60, 0),"v7d": round(v7d / 60, 0) })
-        self.log("sersor.stat_" + entity)
+        self.set_state("sensor.stat_" + entity, state = round(v1d / 60, 0), attributes = {"friendly_name":friendly_name,"v1d": round(v1d / 60, 0),"v3d": round(v3d / 60, 0),"v7d": round(v7d / 60, 0) })
+        self.log("sensor.stat_" + entity)
 
